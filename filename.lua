@@ -24,7 +24,7 @@ function read_meta()
   name = url_decode(name)
   local path_segments = string.split(name, "/")
   name = path_segments[#path_segments]
-  local showName, seasonNumber, episodeNumber, title = string.match(name, "([^%-%d]+)%s*%-?%s*[%[Ss]?(%d?%d)[xEe](%d%d)%]?%s*%-%s*(.*)")
+  local showName, seasonNumber, episodeNumber, title = string.match(name, "([^%-%d]+)%s*%-?%s*[%[Ss]?(%d?%d)[xEe](%d%d)%]?%s*%-?%s*(.*)")
   if not showName then
     vlc.item:set_meta("title", filename)
     return
